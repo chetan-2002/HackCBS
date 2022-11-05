@@ -1,11 +1,22 @@
 import React from "react";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 // import LandingPageDog from "../assets/homepage/LandingPageDog";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const {
+    logout,
+    isAuthenticated,
+    isLoading,
+    loginWithPopup,
+    user,
+    getAccessTokenSilently,
+  } = useAuth0();
   return (
     <>
       <div className="landing-page-container">
@@ -28,8 +39,18 @@ const Home = () => {
               </div>
               <p>Don't worry, We've got you covered !</p>
               <div className="know-more-container">
-                <button>
-                  <Link to="/">Get Started</Link>
+                <button
+                  onClick={() => {
+                    if (isAuthenticated) {
+                      logout({ returnTo: window.location.origin });
+                      localStorage.removeItem("user");
+                      localStorage.removeItem("access_token");
+                    } else {
+                      loginWithPopup();
+                    }
+                  }}
+                >
+                  {isAuthenticated ? "Log Out" : "Log In"}
                 </button>
               </div>
             </div>

@@ -19,18 +19,6 @@ const LoginButton = () => {
       getAccessTokenSilently()
         .then((token) => {
           localStorage.setItem("access_token", token);
-          axios
-            .get("http://localhost:5000/api/post/getAllPosts", {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            })
-            .then((res) => {
-              console.log(res.data);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
         })
         .catch((err) => {
           console.log(err);
