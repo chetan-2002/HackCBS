@@ -1,0 +1,232 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:wght@300&family=Playfair+Display&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:wght@300&family=PT+Sans&family=Playfair+Display&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:wght@300&family=Open+Sans:wght@300&family=PT+Sans&family=Playfair+Display&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+opacity: 1.0;
+}
+body{
+    /* background-color: #93B5C6; */
+    /* background: radial-gradient(circle, rgba(248,249,202,1) 20%, rgba(249,250,116,1) 100%); */
+    
+    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("../assets/dog-and-cat-paw-pattern-background-free-vector.webp");
+    
+}
+/* container below nav */
+.landing-page-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.top_container{
+    display: flex;
+     min-width:360px;
+    width:90%;
+    flex-wrap: wrap;
+    margin:5rem;
+      height:auto;
+    margin-top: 10rem;
+    max-width: 1550px;
+    justify-content: center;
+    align-items: center;
+  
+}
+.left-mid-container{
+    flex-basis:45%;
+    
+}
+.left-mid-container img{
+    width:100%;
+    height:600px;
+    border-radius: 50px 0 50px 0;
+}
+.right-mid-container{
+    flex-basis: 55%;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   align-items: center;
+   width:100%;
+   font-family: 'Amatic SC', cursive;
+   
+}
+.right-mid-container button {
+    border: none;
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    background: #8C3EB0;
+    border-radius: 30px;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    transition-duration: 0.4s;
+    width: 10rem;
+}
+
+.right-mid-container button:hover {
+    background-color: #d69df0; /* Green */
+  }
+.content-mid-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:3rem;
+}
+.content-mid-container h3{
+    font-size: 5.7rem;
+    font-weight:900;
+}
+#span-1{
+    color:rgb(219, 126, 72)
+}
+#span-2{
+    color:rgb(146, 130, 76);
+}
+.content-mid-container p{
+  font-size:2.5rem;
+
+}
+.know-more-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    margin-top: 3rem;
+    font-size: 1.8rem;
+}
+.know-more-container h5 a{
+    text-decoration: none;
+    color:black;
+}
+
+/* About us section */
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:12rem;
+    position: relative;
+    /* opacity: 1.0; */
+    
+}
+section h3{
+    font-size:2.5rem;
+    font-family: 'Amatic SC', cursive;
+}
+.section-container-1 ,.section-container-2{
+    display: flex;
+    flex-direction: row;
+    min-width: 360px;
+    max-width:1100px;
+    width: 60%;
+    align-items: center;
+    background:linear-gradient(270deg, #2A0E4E 14.98%, rgba(42, 14, 78, 0.35) 100%);
+    /* background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../assets/dog-and-cat-paw-pattern-background-free-vector.webp"); */
+    border-radius: 300px;
+    height: 250px;
+}
+.section-container-1 img,.section-container-2 img{
+    flex-basis: 30%;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,134,191,1) 23%, rgba(255,182,217,1) 51%, rgba(255,255,255,1) 100%);
+    /* background: radial-gradient(circle, rgba(175,90,130,1) 6%, rgba(240,141,188,1) 60%, rgba(255,207,230,1) 100%); */
+    border-radius: 100%;
+}
+.section-container-1 p,.section-container-2 p{
+    text-align: center;
+    padding:2rem;
+    font-family: 'Open Sans', sans-serif;
+    height:200px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    
+}
+/* sign up buttons */
+button a{
+    text-decoration: none;
+    color:black;
+}
+.google_translate_element{
+    background-color: black;
+}
+/* respnsiveness */
+@media (max-width:900px)
+{   .mid-container{
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    .left-mid-container{
+    flex-basis: 0%;
+    }
+    .right-mid-container{
+        flex-basis: 100%;
+        border:5px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        padding: 5em;
+    }
+}
+@media(max-width:670px){
+    .section-container-1 ,.section-container-2{
+        flex-direction: column;
+    }
+    .section-container-1 img,.section-container-2 img{
+        flex-basis: 40%;
+        width:100%;
+        height:100%;
+    }
+    .section-container-2{
+        flex-direction: column-reverse;
+    }
+    .nav-right{
+        display: flex;
+        align-items: center;
+    }
+}
+@media(max-width:470px){
+    .nav-outer-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.footer {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.footer img{
+   height:300px; 
+   width:500px;
+}
+
+footer {
+    background-color: red;
+    width:100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem;
+    background-color: #AEE3F3;
+}
+.logo a{
+    font-size: 2rem;
+    color:#000;
+}
+.social-media-links{
+    display: flex;
+    gap:3rem;
+
+}
