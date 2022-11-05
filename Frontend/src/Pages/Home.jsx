@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+import axios from "axios";
 // import LandingPageDog from "../assets/homepage/LandingPageDog";
 
 const Home = () => {
   const navigate = useNavigate();
-  const {
-    logout,
-    isAuthenticated,
-    isLoading,
-    loginWithPopup,
-    user,
-    getAccessTokenSilently,
-  } = useAuth0();
+  const { logout, isAuthenticated, loginWithPopup, user } = useAuth0();
+  useEffect(() => {
+    if (isAuthenticated) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+  });
+  const login = async () => {
+    await loginWithPopup();
+    console.log(localStorage.getItem("user"));
+  };
   return (
     <>
       <div className="landing-page-container">
@@ -46,11 +49,11 @@ const Home = () => {
                       localStorage.removeItem("user");
                       localStorage.removeItem("access_token");
                     } else {
-                      loginWithPopup();
+                      login();
                     }
                   }}
                 >
-                  {isAuthenticated ? "Log Out" : "Log In"}
+                  {isAuthenticated ? "Continue" : "Log In"}
                 </button>
               </div>
             </div>
