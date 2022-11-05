@@ -18,6 +18,9 @@ const postSchema = new Schema(
       required: true,
       trim: true,
     },
+    contact: {
+      type: String,
+    },
     uploadedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
