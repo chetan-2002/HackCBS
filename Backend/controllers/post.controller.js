@@ -38,10 +38,13 @@ const getAllPostsNGO = async (req, res) => {
 //route : /api/post/getPostDetails
 const getPostDetails = async (req, res) => {
   const { ngoId } = req.body;
+  console.log(ngoId);
   if (!ngoId) {
     return res.status(400).json({ message: "Please provide the ngoId" });
   }
-  const user = await User.findById(ngoId).select(
+  const post = await Post.findOne({ _id: ngoId });
+  const userId = post.uploadedBy;
+  const user = await User.findById(userId).select(
     "-password -role -createdAt  -updatedAt -__v -yourInterest"
   );
   if (!user) {
@@ -55,13 +58,14 @@ const addPost = async (req, res) => {
   if (req.user.role !== "ngo") {
     return res.status(401).json({ message: "Unauthorized" });
   }
-  const { title, area, workRequirement, timings } = req.body;
+  const { title, area, workRequirement, timings, contact } = req.body;
   const post = await Post.create({
     title,
     area,
     workRequirement,
     timings,
     uploadedBy: req.user._id,
+    contact,
   });
 
   if (!post) {

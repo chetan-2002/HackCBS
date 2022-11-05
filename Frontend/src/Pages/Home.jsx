@@ -10,7 +10,8 @@ import axios from "axios";
 
 const Home = () => {
   const navigate = useNavigate();
-  const { logout, isAuthenticated, loginWithPopup, user } = useAuth0();
+  const { logout, isAuthenticated, loginWithPopup, loginWithRedirect, user } =
+    useAuth0();
   useEffect(() => {
     if (isAuthenticated) {
       localStorage.setItem("user", JSON.stringify(user));
@@ -18,7 +19,6 @@ const Home = () => {
   });
   const login = async () => {
     await loginWithPopup();
-    console.log(localStorage.getItem("user"));
   };
   return (
     <>
@@ -47,9 +47,9 @@ const Home = () => {
                     if (isAuthenticated) {
                       logout({ returnTo: window.location.origin });
                       localStorage.removeItem("user");
-                      localStorage.removeItem("access_token");
                     } else {
-                      login();
+                      loginWithPopup();
+                      navigate("/findorwant");
                     }
                   }}
                 >

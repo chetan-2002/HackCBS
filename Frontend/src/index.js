@@ -4,16 +4,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import DashBoard from "./Pages/DashBoard";
 import FindOrWant from "./Pages/FindOrWant";
+// import { ChakraProvider } from "@chakra-ui/react";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import ShelterProfile from "./Pages/ShelterProfile";
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 import { Register } from "./Pages/Register";
+import AllNgosPost from "./Pages/AllNgosPost";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Auth0ProviderWithHistory>
+      {/* <ChakraProvider> */}
       <Routes>
         <Route exact path="/" element={<App />}></Route>
         <Route exact path="/Login" element={<Login />}></Route>
@@ -21,13 +24,15 @@ root.render(
         <Route exact path="/Shelter/Profile" element={<Profile />}></Route>
         <Route
           exact
-          path="/ShelterProfile"
+          path="/ShelterProfile/:id"
           element={<ShelterProfile />}
         ></Route>
         <Route exact path="/FindOrWant" element={<FindOrWant />}></Route>
         <Route exact path="/dashboard" element={<DashBoard />}></Route>
-        <Route exact path='/register' element={<Register/>}></Route>
+        <Route exact path="/register" element={<Register />}></Route>
+        <Route exact path="/AllNgosPost" element={<AllNgosPost />}></Route>
       </Routes>
+      {/* </ChakraProvider> */}
     </Auth0ProviderWithHistory>
   </BrowserRouter>
 );
