@@ -1,0 +1,29 @@
+.main-div{
+    display: flex;
+    align-items: center;
+    margin-top: 20rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    background-color: red;
+}
+
+.PostHeading{
+    position: relative;
+    margin-left: 40%;
+}
+
+.form{
+    display: flex;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 60vw;
+    justify-content: center;
+
+}
+
+.field{
+    margin-bottom: 10px;
+
+}
