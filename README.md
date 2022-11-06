@@ -24,6 +24,20 @@ SaveOurStrays is a platform that works as a volunteer aggregation platform for a
 
 ## Screenshots Time
 
+Home Page
+
+![image](https://user-images.githubusercontent.com/73431489/200156813-fe551e0c-e9a3-4556-ba00-c136dc8e796c.png)
+
+Volunteer Dashboard
+
+![image](https://user-images.githubusercontent.com/73431489/200156894-21fe9784-e7fc-4f2c-8f1c-b6b8198f44ec.png)
+
+
+Volunteer or Shelter Login
+
+![image](https://user-images.githubusercontent.com/73431489/200156925-475c7c3d-d7ce-4d51-9115-66b7d9a06a82.png)
+
+
 
 
 ## License
